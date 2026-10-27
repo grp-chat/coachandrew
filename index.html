@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arena" id="arena">
+  <div class="grid-bg"></div>
+  <div class="scanline"></div>
+  <div class="particles" id="particles"></div>
+
+  <main class="main">
+    <header class="headline">
+      <h1><span class="coach-name">COACH ANDREW'S</span> <span class="league-name">STACKING LEAGUE</span></h1>
+      <p class="subtitle">TWO TEAMS. ONE MISSION.</p>
+    </header>
+
+    <section class="scoreboard">
+      <article class="team red" id="redCard">
+        <div class="team-top">
+          <div class="team-symbol">R</div>
+          <div class="team-title-wrap">
+            <div class="team-label">TEAM</div>
+            <div class="team-name" id="redName">RED TITANS</div>
+          </div>
+          <div class="crown">♛</div>
+        </div>
+        <div class="score-frame">
+          <div class="score" id="redScore">00</div>
+          <div class="score-caption">TOTAL POINTS</div>
+        </div>
+        <div class="team-status">
+          <span class="status-light"></span>
+          <span id="redStatus">READY TO STACK</span>
+        </div>
+        <div class="score-actions">
+          <button class="minus" data-team="red" data-delta="-1" aria-label="Remove one red point">−</button>
+          <button class="plus" data-team="red" data-delta="1">+1 POINT</button>
+          <button class="plus plus3" data-team="red" data-delta="3">+3</button>
+        </div>
+      </article>
+
+      <div class="versus">
+        <div class="versus-line"></div>
+        <div class="vs-badge">VS</div>
+        <div class="middle-flash">✦</div>
+        <div class="versus-line"></div>
+      </div>
+
+      <article class="team blue" id="blueCard">
+        <div class="team-top">
+          <div class="team-symbol">B</div>
+          <div class="team-title-wrap">
+            <div class="team-label">TEAM</div>
+            <div class="team-name" id="blueName">BLUE PHOENIX</div>
+          </div>
+          <div class="crown">♛</div>
+        </div>
+        <div class="score-frame">
+          <div class="score" id="blueScore">00</div>
+          <div class="score-caption">TOTAL POINTS</div>
+        </div>
+        <div class="team-status">
+          <span class="status-light"></span>
+          <span id="blueStatus">READY TO STACK</span>
+        </div>
+        <div class="score-actions">
+          <button class="minus" data-team="blue" data-delta="-1" aria-label="Remove one blue point">−</button>
+          <button class="plus" data-team="blue" data-delta="1">+1 POINT</button>
+          <button class="plus plus3" data-team="blue" data-delta="3">+3</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="battle-info">
+      <div class="timer-box">
+        <div class="timer-label">⏱ MATCH CLOCK</div>
+        <div class="timer" id="timer">00:00</div>
+        <div class="timer-buttons">
+          <button id="startTimer">▶ START</button>
+          <button id="resetTimer">↺ RESET</button>
+        </div>
+      </div>
+
+      <div class="leader-box">
+        <div class="leader-label">CURRENT LEADER</div>
+        <div id="leader" class="leader">IT'S A TIE!</div>
+        <div id="difference" class="difference">Both teams are neck and neck</div>
+        <div class="leader-bar">
+          <div id="redBar"></div>
+          <div id="blueBar"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left"><span class="footer-dot"></span> SPEED • PRECISION • TEAMWORK</div>
+      <div class="footer-right">TWO TEAMS. ONE MISSION.</div>
+    </footer>
+
+    <button class="fullscreen-btn" id="fullscreen" title="Enter fullscreen" aria-label="Toggle fullscreen">⛶ FULLSCREEN</button>
+
+    <div class="announcement" id="announcement">
+      <div class="announce-inner">
+        <div class="trophy">🏆</div>
+        <div class="announce-small">THE CHAMPION IS</div>
+        <div class="winner-name" id="winnerName">RED TITANS</div>
+        <button id="closeAnnouncement">BACK TO MATCH</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<aside class="control-panel">
+  <div class="control-heading">MATCH CONTROL <span>ADMIN</span></div>
+
+  <div class="name-controls">
+    <label>RED TEAM NAME
+      <input id="redInput" value="RED TITANS" maxlength="20">
+    </label>
+    <label>BLUE TEAM NAME
+      <input id="blueInput" value="BLUE PHOENIX" maxlength="20">
+    </label>
+  </div>
+
+  <div class="admin-row">
+    <label>ROUND
+      <input id="roundInput" type="number" min="1" max="99" value="1">
+    </label>
+    <button id="applySettings">APPLY TEAM NAMES / ROUND</button>
+  </div>
+
+  <div class="admin-buttons">
+    <button id="finishMatch" class="finish">🏆 DECLARE WINNER</button>
+    <button id="nextRound">NEXT ROUND ↗</button>
+    <button id="resetMatch" class="reset-all">↺ RESET ALL SCORES</button>
+  </div>
+
+  <div class="key-help">KEYBOARD SHORTCUTS</div>
+  <div class="keys">
+    <kbd>A</kbd> Red +1
+    <kbd>L</kbd> Blue +1
+    <kbd>Space</kbd> Start/Pause clock
+    <kbd>F</kbd> Fullscreen
+    <kbd>Esc</kbd> Close winner
+  </div>
+</aside>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
