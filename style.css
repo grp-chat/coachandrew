@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap');
 
 :root {
-  --red: #ff304b;
-  --blue: #168cff;
+  /* --red: #ff304b; */ /* original */
+  --red: #FF4848; /* hot coral */
+  /* --red: #ff1d8d;  */
+  /* --blue: #168cff; */ /* original */
+  --blue: #00CFFF; /* original */
   --bg: #060814;
   --white: #f7f9ff;
 }
@@ -61,7 +64,7 @@ button { cursor: pointer; }
 
 .arena::before {
   left: -17%;
-  background: #ff163f;
+  background: var(--red);
   animation: glowPulse 4s ease-in-out infinite alternate;
 }
 
@@ -709,19 +712,19 @@ footer {
 }
 
 #redCard .score-frame::after {
-  background: #ff304b;
+  background: var(--red);
   box-shadow:
-    0 0 18px #ff304b,
-    0 0 35px #ff304b,
-    inset 0 0 25px #ff304b;
+    0 0 18px var(--red),
+    0 0 35px var(--red),
+    inset 0 0 25px var(--red);
 }
 
 #blueCard .score-frame::after {
-  background: #168cff;
+  background: var(--blue);
   box-shadow:
-    0 0 18px #168cff,
-    0 0 35px #168cff,
-    inset 0 0 25px #168cff;
+    0 0 18px var(--blue),
+    0 0 35px var(--blue),
+    inset 0 0 25px var(--blue);
 }
 
 .score-frame.highlight-active::after {

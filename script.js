@@ -58,7 +58,7 @@ function highlightScoreFrame(team) {
 }
 
     function formatScore(number) {
-      return String(number).padStart(2, "0");
+      return String(number);
     }
 
     // UPDATE SCORES AND LEADERBOARD
